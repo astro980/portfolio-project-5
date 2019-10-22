@@ -1,0 +1,35 @@
+/* #imagelightbox
+{
+    position: fixed;
+    z-index: 9999;
+ 
+    -ms-touch-action: none;
+    touch-action: none;
+} */
+
+h1 {
+    text-align: center;
+    margin: 30px 0 50px;
+}
+
+.gallery {
+    margin: 10px 50px;    
+}
+
+.gallery img {
+    width: 300px;
+    padding: 5px;
+    filter: grayscale(100%);
+    transition: 1s;
+}
+
+.gallery img:hover {    
+    filter: grayscale(0);
+    transform: scale(1.1);
+}
+
+.lb-close {
+    position: absolute;
+    top: -5%;
+    right: 5%;
+}
