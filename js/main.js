@@ -9,13 +9,26 @@ lightbox.option({
 // Type Head js
 // ------------------------
 
+const search = document.querySelector('#searchbox');
+const galleryBox = document.querySelectorAll('.col h2');
+const imgLink = document.getElementsByTagName('a');
 
+const searchIt = event => {
+    searchOn = event.target.value.toLowerCase();
+    getCaption = imgLink.getAttribute('data-title');
+    
 
-
-
-function searchIt() {
-    const input = document.getElementById("searchbox");    
-    input.value = searchbox.value.toLowerCase();
+    galleryBox.forEach(galleryBox => {
+        const title = galleryBox.textContent.toLowerCase();
+        const caption = getCaption.toLowerCase();
+        const box = galleryBox.parentElement;     
+        
+        if (title.indexOf(searchOn) > -1 ) {
+            box.style.display = "block";
+        } else {
+            box.style.display = "none";
+        }
+    });
 }
 
-document.getElementById("searchbox").addEventListener("keyup", searchIt);
+search.addEventListener('keyup', searchIt);
