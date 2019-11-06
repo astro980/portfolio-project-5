@@ -11,24 +11,21 @@ lightbox.option({
 
 const search = document.querySelector('#searchbox');
 const galleryBox = document.querySelectorAll('.col h2');
-const imgLink = document.getElementsByTagName('a');
 
 const searchIt = event => {
-    searchOn = event.target.value.toLowerCase();
-    getCaption = imgLink.getAttribute('data-title');
-    
+    const searchOn = event.target.value.toLowerCase();    
 
-    galleryBox.forEach(galleryBox => {
-        const title = galleryBox.textContent.toLowerCase();
-        const caption = getCaption.toLowerCase();
-        const box = galleryBox.parentElement;     
-        
-        if (title.indexOf(searchOn) > -1 ) {
-            box.style.display = "block";
+     galleryBox.forEach(galleryBox => {
+        const titleSearch = galleryBox.textContent.toLowerCase();
+        const boxMatch = galleryBox.parentElement;
+
+        if (titleSearch.indexOf(searchOn) > -1) {
+            boxMatch.style.display = "block";
         } else {
-            box.style.display = "none";
-        }
-    });
-}
+            boxMatch.style.display = "none";
+        }    
 
+    });         
+}
+console.log(searchIt);
 search.addEventListener('keyup', searchIt);
