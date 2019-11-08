@@ -2,7 +2,12 @@
 // Lightbox jQuery
 // ------------------------
 lightbox.option({
-    'alwaysShowNavOnTouchDevices': true
+    'alwaysShowNavOnTouchDevices': true,
+    'maxHeight': 1000,
+    'wrapAround': true,
+    'showImageNumberLabel': false,
+    'fitImagesInViewport': true
+    
 });
 
 // -------------------------

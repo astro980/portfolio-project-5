@@ -90,6 +90,12 @@ input.search {
 }
 
 /* Lightbox Edited Styles */
+.lb-data .lb-caption {
+    font-size: 40px;
+    margin: 10px 24%;
+}
+
+
 
 .lb-close {
     position: absolute;
