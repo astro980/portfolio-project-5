@@ -10,13 +10,14 @@ lightbox.option({
 // ------------------------
 
 const search = document.querySelector('#searchbox');
-const galleryBox = document.querySelectorAll('.col h2');
+const galleryBox = document.querySelectorAll('a[data-title]');
 
 const searchIt = event => {
     const searchOn = event.target.value.toLowerCase();    
 
      galleryBox.forEach(galleryBox => {
-        const titleSearch = galleryBox.textContent.toLowerCase();
+        const getTitle = galleryBox.getAttribute('data-title');
+        const titleSearch = getTitle.toLowerCase();
         const boxMatch = galleryBox.parentElement;
 
         if (titleSearch.indexOf(searchOn) > -1) {
@@ -27,5 +28,4 @@ const searchIt = event => {
 
     });         
 }
-console.log(searchIt);
 search.addEventListener('keyup', searchIt);
